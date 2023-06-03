@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кількість днів між датами</title>
+  <script>
+    function calculateDays() {
+      var date1 = document.getElementById('date1').value;
+      var date2 = document.getElementById('date2').value;
+
+      var oneDay = 24 * 60 * 60 * 1000;
+      var firstDate = new Date(date1);
+      var secondDate = new Date(date2);
+
+      var diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+
+      document.getElementById('result').textContent = "Кількість днів між " + date1 + " і " + date2 + ": " + diffDays;
+    }
+  </script>
+</head>
+
+<body>
+<h1>Визначення кількості днів між датами</h1>
+<label for="date1">Дата 1 (mm.dd.yyyy):</label>
+<input type="text" id="date1">
+<br>
+<label for="date2">Дата 2 (mm.dd.yyyy):</label>
+<input type="text" id="date2">
+<br>
+<button onclick="calculateDays()">Обчислити</button>
+<p id="result"></p>
+</body>
+
+</html>
