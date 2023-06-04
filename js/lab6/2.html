@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Вікно №2</title>
+  <style>
+    body {
+      background-color: #ccffcc;
+    }
+  </style>
+</head>
+<body>
+<h1>Вікно №2</h1>
+
+<button onclick="showContent()">Показати вміст документа</button>
+
+<script>
+  function showContent() {
+    var password = prompt("Введіть пароль:");
+
+    if (password === "123") {
+      alert("Вміст документа доступний.");
+    } else {
+      alert("Невірний пароль. Доступ заборонено.");
+    }
+  }
+</script>
+</body>
+</html>

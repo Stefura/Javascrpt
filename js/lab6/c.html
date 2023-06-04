@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Розрахунок площі прямокутного трикутника</title>
+</head>
+<body>
+<h1>Розрахунок площі прямокутного трикутника</h1>
+
+<h2>За допомогою методу write</h2>
+<script>
+  var a = 8;
+  var b = 10;
+  var area = (a * b) / 2;
+  document.write("Площа прямокутного трикутника: " + area + " кв.см");
+</script>
+
+<h2>За допомогою функції</h2>
+<script>
+  function calculateArea() {
+    var a = 8;
+    var b = 10;
+    var area = (a * b) / 2;
+    return area;
+  }
+  var result = calculateArea();
+  document.write("Площа прямокутного трикутника: " + result + " кв.см");
+</script>
+
+<h2>За допомогою введення значень з форми</h2>
+<form id="triangleForm">
+  <label for="sideA">Довжина катету A (см):</label>
+  <input type="number" id="sideA" name="sideA"><br>
+
+  <label for="sideB">Довжина катету B (см):</label>
+  <input type="number" id="sideB" name="sideB"><br>
+
+  <input type="button" value="Розрахувати" onclick="calculateAreaFromForm()">
+</form>
+
+<p id="result"></p>
+
+<script>
+  function calculateAreaFromForm() {
+    var a = parseFloat(document.getElementById("sideA").value);
+    var b = parseFloat(document.getElementById("sideB").value);
+    var area = (a * b) / 2;
+    document.getElementById("result").innerHTML = "Площа прямокутного трикутника: " + area + " кв.см";
+  }
+</script>
+</body>
+</html>
+

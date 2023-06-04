@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Міні-сайт</title>
+  <style>
+    body {
+      background-color: #e6e6e6;
+    }
+  </style>
+</head>
+<body>
+<h1>Міні-сайт</h1>
+
+<h2>Перша пара кнопок</h2>
+<button onclick="openWindow1()">Відкрити вікно №1</button>
+<button onclick="closeWindow1()">Закрити вікно №1</button>
+
+<h2>Друга пара кнопок</h2>
+<button onclick="openWindow2()">Відкрити вікно №2</button>
+<button onclick="closeWindow2()">Закрити вікно №2</button>
+
+<h2>Третя пара кнопок</h2>
+<button onclick="openWindow3()">Відкрити вікно №3</button>
+<button onclick="closeWindow3()">Закрити вікно №3</button>
+
+<script>
+  var window1, window2, window3;
+
+  function openWindow1() {
+    window1 = window.open("1.html", "_blank", "width=400,height=400,resizable=no");
+  }
+
+  function closeWindow1() {
+    window1.close();
+  }
+
+  function openWindow2() {
+    window2 = window.open("2.html", "_blank", "width=400,height=400,resizable=yes");
+  }
+
+  function closeWindow2() {
+    window2.close();
+  }
+
+  function openWindow3() {
+    window3 = window.open("3.html", "_blank", "width=400,height=400,resizable=yes");
+  }
+
+  function closeWindow3() {
+    window3.close();
+  }
+</script>
+</body>
+</html>
