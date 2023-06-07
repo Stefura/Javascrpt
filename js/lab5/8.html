@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Image Example</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 800px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="myCanvas"></canvas>
+
+<script>
+
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+  var image = new Image();
+  image.src = "image.jpg";
+
+  image.onload = function() {
+
+    context.drawImage(image, 0, 0);
+  };
+</script>
+</body>
+</html>
+

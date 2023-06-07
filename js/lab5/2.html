@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Drawing Example</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+  var startX = 50;
+  var startY = 50;
+  var endX = 250;
+  var endY = 250;
+
+  context.beginPath();
+  context.moveTo(startX, startY);
+  context.lineTo(endX, endY);
+  context.strokeStyle = "blue";
+  context.lineWidth = 2;
+  context.stroke();
+</script>
+</body>
+</html>

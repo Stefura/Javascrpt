@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sprite Animation Example</title>
+  <style>
+    /* Задаємо розмір полотна і його рамку */
+    canvas {
+      border: 1px solid black;
+      width: 600px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+
+<script>
+  var canvas = document.getElementById("myCanvas");
+
+  var context = canvas.getContext("2d");
+
+  var sprite = new Image();
+  sprite.src = "sprite13.jpg";
+
+  var x = 20;
+  var y = 20;
+  var spriteWidth = 128;
+  var spriteHeight = 128;
+
+  var animationSpeed = 150;
+
+  var frames = [
+    { x: 0, y: 0 },
+    { x: 0, y: 128 },
+    { x: 0, y: 256 },
+    { x: 0, y: 384 }
+  ];
+
+  var currentFrame = 0;
+
+  function animate() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(sprite, frames[currentFrame].x, frames[currentFrame].y, spriteWidth, spriteHeight, x, y, spriteWidth, spriteHeight);
+    currentFrame++;
+    if (currentFrame >= frames.length) {
+      currentFrame = 0;
+    }
+    setTimeout(animate, animationSpeed);
+  }
+
+  animate();
+</script>
+</body>
+</html>
+
+

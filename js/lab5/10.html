@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Animation Example</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 400px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+  var x = 50;
+  var y = 50;
+  var speedX = 2;
+  var speedY = 1;
+  function animate() {
+    context.fillRect(x, y, 50, 50);
+    x += speedX;
+    y += speedY;
+    if (x + 50 > canvas.width || x < 0) {
+      speedX *= -1;
+    }
+    if (y + 50 > canvas.height || y < 0) {
+      speedY *= -1;
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+</body>
+</html>

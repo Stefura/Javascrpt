@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Text Example</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 400px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="myCanvas"></canvas>
+
+<script>
+
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+
+  context.font = "30px Arial";
+  context.fillStyle = "blue";
+  context.fillText("Hello, Canvas!", 50, 100);
+</script>
+</body>
+</html>

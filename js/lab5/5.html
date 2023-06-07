@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Pen Example</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+
+  context.lineWidth = 5;
+  context.strokeStyle = "red";
+  context.fillStyle = "blue";
+  context.beginPath();
+  context.moveTo(50, 50);
+  context.lineTo(150, 50);
+  context.quadraticCurveTo(100, 100, 150, 150);
+  context.rect(200, 50, 100, 100);
+  context.closePath();
+  context.fill();
+  context.stroke();
+</script>
+</body>
+</html>
